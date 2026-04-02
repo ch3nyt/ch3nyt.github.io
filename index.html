@@ -9,18 +9,24 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>
+    (function () {
+      var l = localStorage.getItem("lang") || "en";
+      document.documentElement.lang = l === "zh" ? "zh-TW" : "en";
+    }());
+  </script>
 </head>
 <body>
-  <a href="#about" class="skip-link">Skip to content</a>
+  <a href="#about" class="skip-link" data-en="Skip to content" data-zh="跳至主要內容">Skip to content</a>
 
   <header>
     <nav>
       <a href="#about" class="nav-name">Yan-Ting Chen</a>
       <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#projects">Projects</a>
-        <a href="#resume">Resume</a>
+        <a href="#about" data-en="About" data-zh="關於">About</a>
+        <a href="#research" data-en="Research" data-zh="研究">Research</a>
+        <a href="#projects" data-en="Projects" data-zh="專案">Projects</a>
+        <a href="#resume" data-en="Resume" data-zh="履歷">Resume</a>
         <button class="lang-toggle" type="button">中文</button>
       </div>
     </nav>
@@ -28,28 +34,59 @@
 
   <main>
     <section id="about">
-      <h2>About</h2>
-      <!-- About content coming in Phase 2 -->
+      <h2 data-en="About" data-zh="關於">About</h2>
+
+      <div class="about-intro">
+        <p class="about-name">Yan-Ting Chen &nbsp;·&nbsp; <span class="about-name-zh">陳彥廷</span></p>
+        <p class="about-affiliation"
+           data-en="B.A. in Economics · National Taiwan University · Expected Dec. 2026"
+           data-zh="經濟學系學士 · 國立臺灣大學 · 預計 2026 年 12 月畢業">B.A. in Economics · National Taiwan University · Expected Dec. 2026</p>
+        <div class="contact-links">
+          <a href="mailto:Yan.YT.Chen@gmail.com">Yan.YT.Chen@gmail.com</a>
+          <a href="https://github.com/ch3nyt" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://linkedin.com/in/ch3nyt" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+
+      <p class="about-bio"
+         data-en="Yan-Ting Chen is a senior undergraduate student in Economics at National Taiwan University, with an expected graduation in December 2026. He currently serves as a Research Assistant at the TASSEL Lab under Prof. Joseph Dao-Yi Wang, developing computational methods to quantify linguistic structure emergence in multi-agent human experiments. Previously, he conducted undergraduate research at the iDSSP Lab on demographic fairness in recommendation systems, achieving 6–20× fairness improvements with less than 1% accuracy trade-off. His industry experience includes a Fintech × Generative AI Research Internship at Cathay United Bank, a Technology Consulting Internship at Ernst &amp; Young, and a Software Engineering Internship at Flexsoft."
+         data-zh="陳彥廷是國立臺灣大學經濟學系大四學生，預計於 2026 年 12 月畢業。目前擔任 TASSEL 實驗室王道一教授的研究助理，開發計算方法以量化多人實驗中的語言結構湧現現象。此前，他於 iDSSP 實驗室從事大學部研究，專注於推薦系統的人口統計公平性，在準確率損失不超過 1% 的情況下，實現了 6–20 倍的公平性提升。其業界經驗涵蓋國泰世華銀行（金融科技 × 生成式 AI 研究實習生）、安永聯合會計師事務所（科技顧問實習生），以及 Flexsoft（軟體工程師實習生）。">Yan-Ting Chen is a senior undergraduate student in Economics at National Taiwan University, with an expected graduation in December 2026. He currently serves as a Research Assistant at the TASSEL Lab under Prof. Joseph Dao-Yi Wang, developing computational methods to quantify linguistic structure emergence in multi-agent human experiments. Previously, he conducted undergraduate research at the iDSSP Lab on demographic fairness in recommendation systems, achieving 6–20× fairness improvements with less than 1% accuracy trade-off. His industry experience includes a Fintech × Generative AI Research Internship at Cathay United Bank, a Technology Consulting Internship at Ernst &amp; Young, and a Software Engineering Internship at Flexsoft.</p>
     </section>
 
     <section id="research">
-      <h2>Research</h2>
-      <!-- Research content coming in Phase 2 -->
+      <h2 data-en="Research Interests" data-zh="研究興趣">Research Interests</h2>
+
+      <p class="research-intro"
+         data-en="My research lies at the intersection of economics and artificial intelligence, with a focus on the following areas:"
+         data-zh="我的研究聚焦於經濟學與人工智慧的交叉領域，主要涵蓋以下方向：">My research lies at the intersection of economics and artificial intelligence, with a focus on the following areas:</p>
+
+      <ul class="research-list">
+        <li data-en="Mechanism design and strategic behavior in multi-agent systems"
+            data-zh="多智能體系統中的機制設計與策略行為">Mechanism design and strategic behavior in multi-agent systems</li>
+        <li data-en="Large language models as behavioral proxies in experimental economics"
+            data-zh="大型語言模型作為實驗經濟學中的行為替代工具">Large language models as behavioral proxies in experimental economics</li>
+        <li data-en="Fairness and bias mitigation in machine learning systems"
+            data-zh="機器學習系統中的公平性與偏見消除">Fairness and bias mitigation in machine learning systems</li>
+        <li data-en="Causal inference and econometric methods for policy evaluation"
+            data-zh="用於政策評估的因果推論與計量經濟學方法">Causal inference and econometric methods for policy evaluation</li>
+      </ul>
     </section>
 
     <section id="projects">
-      <h2>Projects</h2>
+      <h2 data-en="Projects" data-zh="專案">Projects</h2>
       <!-- Projects content coming in Phase 3 -->
     </section>
 
     <section id="resume">
-      <h2>Resume</h2>
+      <h2 data-en="Resume" data-zh="履歷">Resume</h2>
       <!-- Resume content coming in Phase 3 -->
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2026 Yan-Ting Chen</p>
+    <p data-en="© 2026 Yan-Ting Chen" data-zh="© 2026 陳彥廷">© 2026 Yan-Ting Chen</p>
   </footer>
+
+  <script src="lang.js"></script>
 </body>
 </html>
