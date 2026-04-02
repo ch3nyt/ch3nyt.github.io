@@ -278,6 +278,107 @@ footer {
 }
 
 /* ==========================================================================
+   Projects Section
+   ========================================================================== */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-md);
+}
+
+.project-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.project-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-accent);
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.project-name:hover {
+  text-decoration: underline;
+}
+
+.project-desc {
+  margin: 0;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.project-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-top: auto;
+  padding-top: var(--space-xs);
+}
+
+.project-lang::before {
+  content: "\25CF\00A0";
+  color: var(--color-accent);
+}
+
+.projects-fallback,
+.projects-loading {
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+/* ==========================================================================
+   Resume Section
+   ========================================================================== */
+
+.resume-actions {
+  margin-bottom: var(--space-lg);
+}
+
+.btn-download {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-lg);
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 150ms ease;
+}
+
+.btn-download:hover {
+  background: rgba(121, 192, 255, 0.1);
+  text-decoration: none;
+}
+
+.resume-embed {
+  display: block;
+  width: 100%;
+  height: 700px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+}
+
+.resume-embed p {
+  padding: var(--space-lg);
+  color: var(--color-text-muted);
+  font-size: 14px;
+  margin: 0;
+}
+
+/* ==========================================================================
    Mobile Responsive — D-17, D-18, FOUND-04
    ========================================================================== */
 

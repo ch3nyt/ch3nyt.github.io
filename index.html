@@ -74,12 +74,19 @@
 
     <section id="projects">
       <h2 data-en="Projects" data-zh="專案">Projects</h2>
-      <!-- Projects content coming in Phase 3 -->
+      <div id="projects-grid" class="projects-grid"></div>
     </section>
 
     <section id="resume">
       <h2 data-en="Resume" data-zh="履歷">Resume</h2>
-      <!-- Resume content coming in Phase 3 -->
+      <div class="resume-actions">
+        <a href="assets/resume.pdf" download class="btn-download"
+           data-en="Download Resume" data-zh="下載履歷">Download Resume</a>
+      </div>
+      <object class="resume-embed" data="assets/resume.pdf" type="application/pdf">
+        <p data-en="PDF preview is not supported in this browser. Please use the download link above."
+           data-zh="此瀏覽器不支援 PDF 預覽，請使用上方下載連結。">PDF preview is not supported in this browser. Please use the download link above.</p>
+      </object>
     </section>
   </main>
 
@@ -88,5 +95,6 @@
   </footer>
 
   <script src="lang.js"></script>
+  <script src="projects.js"></script>
 </body>
 </html>
