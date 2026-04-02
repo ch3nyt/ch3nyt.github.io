@@ -23,16 +23,19 @@
     <nav>
       <a href="#about" class="nav-name">Yan-Ting Chen</a>
       <div class="nav-links">
-        <a href="#about" data-en="About" data-zh="關於">About</a>
-        <a href="#research" data-en="Research" data-zh="研究">Research</a>
-        <a href="#projects" data-en="Projects" data-zh="專案">Projects</a>
-        <a href="#resume" data-en="Resume" data-zh="履歷">Resume</a>
+        <a href="#about"      data-en="About"      data-zh="關於">About</a>
+        <a href="#research"   data-en="Research"   data-zh="研究">Research</a>
+        <a href="#experience" data-en="Experience" data-zh="經歷">Experience</a>
+        <a href="#projects"   data-en="Projects"   data-zh="專案">Projects</a>
+        <a href="#resume"     data-en="Resume"     data-zh="履歷">Resume</a>
         <button class="lang-toggle" type="button">中文</button>
       </div>
     </nav>
   </header>
 
   <main>
+
+    <!-- ── About ─────────────────────────────────────────────────────────── -->
     <section id="about">
       <h2 data-en="About" data-zh="關於">About</h2>
 
@@ -53,30 +56,114 @@
          data-zh="陳彥廷是國立臺灣大學經濟學系大四學生，預計於 2026 年 12 月畢業。目前擔任 TASSEL 實驗室王道一教授的研究助理，開發計算方法以量化多人實驗中的語言結構湧現現象。此前，他於 iDSSP 實驗室從事大學部研究，專注於推薦系統的人口統計公平性，在準確率損失不超過 1% 的情況下，實現了 6–20 倍的公平性提升。其業界經驗涵蓋國泰世華銀行（金融科技 × 生成式 AI 研究實習生）、安永聯合會計師事務所（科技顧問實習生），以及 Flexsoft（軟體工程師實習生）。">Yan-Ting Chen is a senior undergraduate student in Economics at National Taiwan University, with an expected graduation in December 2026. He currently serves as a Research Assistant at the TASSEL Lab under Prof. Joseph Dao-Yi Wang, developing computational methods to quantify linguistic structure emergence in multi-agent human experiments. Previously, he conducted undergraduate research at the iDSSP Lab on demographic fairness in recommendation systems, achieving 6–20× fairness improvements with less than 1% accuracy trade-off. His industry experience includes a Fintech × Generative AI Research Internship at Cathay United Bank, a Technology Consulting Internship at Ernst &amp; Young, and a Software Engineering Internship at Flexsoft.</p>
     </section>
 
+    <!-- ── Research Experience ───────────────────────────────────────────── -->
     <section id="research">
-      <h2 data-en="Research Interests" data-zh="研究興趣">Research Interests</h2>
+      <h2 data-en="Research Experience" data-zh="研究經歷">Research Experience</h2>
 
-      <p class="research-intro"
-         data-en="My research lies at the intersection of economics and artificial intelligence, with a focus on the following areas:"
-         data-zh="我的研究聚焦於經濟學與人工智慧的交叉領域，主要涵蓋以下方向：">My research lies at the intersection of economics and artificial intelligence, with a focus on the following areas:</p>
+      <div class="timeline">
 
-      <ul class="research-list">
-        <li data-en="Mechanism design and strategic behavior in multi-agent systems"
-            data-zh="多智能體系統中的機制設計與策略行為">Mechanism design and strategic behavior in multi-agent systems</li>
-        <li data-en="Large language models as behavioral proxies in experimental economics"
-            data-zh="大型語言模型作為實驗經濟學中的行為替代工具">Large language models as behavioral proxies in experimental economics</li>
-        <li data-en="Fairness and bias mitigation in machine learning systems"
-            data-zh="機器學習系統中的公平性與偏見消除">Fairness and bias mitigation in machine learning systems</li>
-        <li data-en="Causal inference and econometric methods for policy evaluation"
-            data-zh="用於政策評估的因果推論與計量經濟學方法">Causal inference and econometric methods for policy evaluation</li>
-      </ul>
+        <div class="timeline-entry">
+          <div class="entry-header">
+            <div class="entry-left">
+              <span class="entry-role" data-en="Research Assistant" data-zh="研究助理">Research Assistant</span>
+              <span class="entry-sep"> · </span>
+              <span class="entry-org" data-en="TASSEL Lab, Economics Dept., NTU" data-zh="TASSEL 實驗室，國立臺灣大學經濟學系">TASSEL Lab, Economics Dept., NTU</span>
+            </div>
+            <span class="entry-date">Jan. 2026 – Present</span>
+          </div>
+          <ul class="entry-bullets">
+            <li data-en="Develop Python algorithms to quantify linguistic structure emergence (e.g., compositional vs. irregular patterns) in multi-agent human experiments."
+                data-zh="開發 Python 演算法，量化多人實驗中的語言結構湧現現象（如組合式模式與不規則模式）。">Develop Python algorithms to quantify linguistic structure emergence (e.g., compositional vs. irregular patterns) in multi-agent human experiments.</li>
+            <li data-en="Conduct EDA and apply econometric modeling (Stata/Python) to analyze subjects' strategic adaptation, running Logit/Probit regressions with dummy interactions, and validating model robustness via Hausman tests and VIF diagnostics."
+                data-zh="進行探索性資料分析，並應用計量經濟學模型（Stata/Python）分析受試者策略適應行為，執行含虛擬變數交互項的 Logit/Probit 迴歸，並透過 Hausman 檢定與 VIF 診斷驗證模型穩健性。">Conduct EDA and apply econometric modeling (Stata/Python) to analyze subjects' strategic adaptation, running Logit/Probit regressions with dummy interactions, and validating model robustness via Hausman tests and VIF diagnostics.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-entry">
+          <div class="entry-header">
+            <div class="entry-left">
+              <span class="entry-role" data-en="Undergraduate Researcher" data-zh="大學部研究員">Undergraduate Researcher</span>
+              <span class="entry-sep"> · </span>
+              <span class="entry-org" data-en="iDSSP Lab, Electrical Engineering Dept., NTU" data-zh="iDSSP 實驗室，國立臺灣大學電機系">iDSSP Lab, Electrical Engineering Dept., NTU</span>
+            </div>
+            <span class="entry-date">Jan. 2025 – Dec. 2025</span>
+          </div>
+          <ul class="entry-bullets">
+            <li data-en="Architected a fairness-aware framework by implementing an Adversarial Debiasing network with a double-layer architecture."
+                data-zh="架構公平性感知框架，實作採用雙層架構的對抗去偏差網路。">Architected a fairness-aware framework by implementing an Adversarial Debiasing network with a double-layer architecture.</li>
+            <li data-en="Designed custom loss functions, transitioning from BCE to Quantile Loss to optimize tail performance and balance the fairness-accuracy trade-off."
+                data-zh="設計客製化損失函數，從 BCE 轉換至 Quantile Loss，以優化尾端效能並平衡公平性與準確率之間的取捨。">Designed custom loss functions, transitioning from BCE to Quantile Loss to optimize tail performance and balance the fairness-accuracy trade-off.</li>
+            <li data-en="Led research direction and authored technical report, achieving significant fairness improvements (6–20×) with minimal accuracy loss (&lt;1%)."
+                data-zh="主導研究方向並撰寫技術報告，在準確率損失不超過 1% 的情況下，實現顯著的公平性提升（6–20 倍）。">Led research direction and authored technical report, achieving significant fairness improvements (6–20×) with minimal accuracy loss (&lt;1%).</li>
+          </ul>
+        </div>
+
+      </div>
     </section>
 
+    <!-- ── Professional Experience ───────────────────────────────────────── -->
+    <section id="experience">
+      <h2 data-en="Experience" data-zh="工作經歷">Experience</h2>
+
+      <div class="timeline">
+
+        <div class="timeline-entry">
+          <div class="entry-header">
+            <div class="entry-left">
+              <span class="entry-role" data-en="Fintech × Gen. AI Research Intern" data-zh="金融科技 × 生成式 AI 研究實習生">Fintech × Gen. AI Research Intern</span>
+              <span class="entry-sep"> · </span>
+              <span class="entry-org" data-en="Cathay United Bank, Taipei" data-zh="國泰世華銀行，台北">Cathay United Bank, Taipei</span>
+            </div>
+            <span class="entry-date">Jan. 2026 – Apr. 2026</span>
+          </div>
+          <ul class="entry-bullets">
+            <li data-en="Architected a hybrid RAG evaluation pipeline (BM25 + embeddings) to benchmark local LLMs (e.g., Qwen) via Ragas, delivering feasibility reports to drive secure AI strategy."
+                data-zh="架構混合式 RAG 評估流程（BM25 + 嵌入向量），透過 Ragas 對本地 LLM（如 Qwen）進行基準測試，並提交可行性報告以推動安全 AI 策略。">Architected a hybrid RAG evaluation pipeline (BM25 + embeddings) to benchmark local LLMs (e.g., Qwen) via Ragas, delivering feasibility reports to drive secure AI strategy.</li>
+            <li data-en="Prototyped a VLM-powered Mobile Agent PoC (Maestro, ADB, Ollama) for autonomous GUI exploration, validating zero-data-leakage automated workflows for financial applications."
+                data-zh="開發以 VLM 驅動的行動端智能代理概念驗證（Maestro、ADB、Ollama），用於自主 GUI 探索，驗證金融應用中零資料洩漏的自動化工作流程。">Prototyped a VLM-powered Mobile Agent PoC (Maestro, ADB, Ollama) for autonomous GUI exploration, validating zero-data-leakage automated workflows for financial applications.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-entry">
+          <div class="entry-header">
+            <div class="entry-left">
+              <span class="entry-role" data-en="Technology Consultant Intern" data-zh="科技顧問實習生">Technology Consultant Intern</span>
+              <span class="entry-sep"> · </span>
+              <span class="entry-org" data-en="Ernst &amp; Young (EY), Taipei" data-zh="安永聯合會計師事務所（EY），台北">Ernst &amp; Young (EY), Taipei</span>
+            </div>
+            <span class="entry-date">Jun. 2025 – Jul. 2025</span>
+          </div>
+          <ul class="entry-bullets">
+            <li data-en="Engineered SQL/Python data pipelines and synthesized AI market research to drive FinTech strategies."
+                data-zh="建構 SQL/Python 資料管線，並整合 AI 市場研究報告以推動金融科技策略。">Engineered SQL/Python data pipelines and synthesized AI market research to drive FinTech strategies.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-entry">
+          <div class="entry-header">
+            <div class="entry-left">
+              <span class="entry-role" data-en="Software Engineer Intern" data-zh="軟體工程師實習生">Software Engineer Intern</span>
+              <span class="entry-sep"> · </span>
+              <span class="entry-org" data-en="Flexsoft, Kuala Lumpur" data-zh="Flexsoft，吉隆坡">Flexsoft, Kuala Lumpur</span>
+            </div>
+            <span class="entry-date">Jul. 2023 – Aug. 2023</span>
+          </div>
+          <ul class="entry-bullets">
+            <li data-en="Optimized SQL queries for accounting reporting, significantly improving generation speed and accuracy."
+                data-zh="優化會計報表的 SQL 查詢，顯著提升報表生成速度與準確性。">Optimized SQL queries for accounting reporting, significantly improving generation speed and accuracy.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Projects ──────────────────────────────────────────────────────── -->
     <section id="projects">
       <h2 data-en="Projects" data-zh="專案">Projects</h2>
       <div id="projects-grid" class="projects-grid"></div>
     </section>
 
+    <!-- ── Resume ────────────────────────────────────────────────────────── -->
     <section id="resume">
       <h2 data-en="Resume" data-zh="履歷">Resume</h2>
       <div class="resume-actions">
@@ -88,6 +175,7 @@
            data-zh="此瀏覽器不支援 PDF 預覽，請使用上方下載連結。">PDF preview is not supported in this browser. Please use the download link above.</p>
       </object>
     </section>
+
   </main>
 
   <footer>

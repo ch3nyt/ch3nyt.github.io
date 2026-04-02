@@ -17,40 +17,44 @@
       return;
     }
 
+    var lang = getCurrentLang();
     var fragment = document.createDocumentFragment();
+
     repos.forEach(function (repo) {
       var card = document.createElement("article");
       card.className = "project-card";
 
+      // Title link
       var titleLink = document.createElement("a");
       titleLink.href = repo.html_url;
       titleLink.target = "_blank";
       titleLink.rel = "noopener";
-      titleLink.textContent = repo.name;
+      titleLink.textContent = repo.name.replace(/-/g, "\u2011");
       titleLink.className = "project-name";
+      card.appendChild(titleLink);
 
-      var desc = document.createElement("p");
-      desc.className = "project-desc";
-      desc.textContent = repo.description || "";
-
-      var meta = document.createElement("div");
-      meta.className = "project-meta";
-
-      if (repo.language) {
-        var langBadge = document.createElement("span");
-        langBadge.className = "project-lang";
-        langBadge.textContent = repo.language;
-        meta.appendChild(langBadge);
+      // Description
+      if (repo.description) {
+        var desc = document.createElement("p");
+        desc.className = "project-desc";
+        desc.textContent = repo.description;
+        card.appendChild(desc);
       }
 
-      var stars = document.createElement("span");
-      stars.className = "project-stars";
-      stars.textContent = "\u2605 " + (repo.stargazers_count || 0);
-      meta.appendChild(stars);
+      // Footer with GitHub link
+      var footer = document.createElement("div");
+      footer.className = "project-footer";
+      var ghLink = document.createElement("a");
+      ghLink.href = repo.html_url;
+      ghLink.target = "_blank";
+      ghLink.rel = "noopener";
+      ghLink.className = "project-footer-link";
+      ghLink.setAttribute("data-en", "View on GitHub \u2192");
+      ghLink.setAttribute("data-zh", "\u5728 GitHub \u67e5\u770b \u2192");
+      ghLink.textContent = lang === "zh" ? "\u5728 GitHub \u67e5\u770b \u2192" : "View on GitHub \u2192";
+      footer.appendChild(ghLink);
+      card.appendChild(footer);
 
-      card.appendChild(titleLink);
-      if (repo.description) card.appendChild(desc);
-      card.appendChild(meta);
       fragment.appendChild(card);
     });
 
@@ -63,9 +67,9 @@
     var p = document.createElement("p");
     p.className = "projects-fallback";
     p.setAttribute("data-en", "GitHub projects could not be loaded. Please visit github.com/ch3nyt directly.");
-    p.setAttribute("data-zh", "無法載入 GitHub 專案，請直接造訪 github.com/ch3nyt。");
+    p.setAttribute("data-zh", "\u7121\u6cd5\u8f09\u5165 GitHub \u5c08\u6848\uff0c\u8acb\u76f4\u63a5\u9020\u8a2a github.com/ch3nyt\u3002");
     p.textContent = lang === "zh"
-      ? "無法載入 GitHub 專案，請直接造訪 github.com/ch3nyt。"
+      ? "\u7121\u6cd5\u8f09\u5165 GitHub \u5c08\u6848\uff0c\u8acb\u76f4\u63a5\u9020\u8a2a github.com/ch3nyt\u3002"
       : "GitHub projects could not be loaded. Please visit github.com/ch3nyt directly.";
     grid.innerHTML = "";
     grid.appendChild(p);
@@ -87,7 +91,7 @@
 
     var lang = getCurrentLang();
     grid.innerHTML = "<p class=\"projects-loading\">" +
-      (lang === "zh" ? "載入專案中…" : "Loading projects\u2026") + "</p>";
+      (lang === "zh" ? "\u8f09\u5165\u5c08\u6848\u4e2d\u2026" : "Loading projects\u2026") + "</p>";
 
     fetch(API_URL)
       .then(function (res) {
