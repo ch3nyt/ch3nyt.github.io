@@ -217,8 +217,25 @@ footer {
    About Section
    ========================================================================== */
 
-.about-intro {
+.about-hero {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-xl);
   margin-bottom: var(--space-xl);
+}
+
+.about-photo {
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid var(--color-border);
+}
+
+.about-intro {
+  flex: 1;
+  min-width: 0;
 }
 
 .about-name {
@@ -329,6 +346,15 @@ footer {
 .entry-org {
   font-size: 14px;
   color: var(--color-text-muted);
+}
+
+.org-icon {
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+  vertical-align: middle;
+  margin-right: 4px;
+  flex-shrink: 0;
 }
 
 .entry-date {
@@ -471,6 +497,16 @@ footer {
    ========================================================================== */
 
 @media (max-width: 480px) {
+  .about-hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-links {
+    justify-content: center;
+  }
+
   nav {
     flex-wrap: wrap;
     height: auto;
