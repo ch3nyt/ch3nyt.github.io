@@ -60,6 +60,9 @@
 
     grid.innerHTML = "";
     grid.appendChild(fragment);
+    if (typeof window.applyLang === "function") {
+      window.applyLang(getCurrentLang());
+    }
   }
 
   function renderFallback(grid) {

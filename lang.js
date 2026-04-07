@@ -24,6 +24,8 @@
     }
   }
 
+  window.applyLang = applyLang;
+
   function init() {
     var lang = getLang();
     applyLang(lang);
