@@ -4,24 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yan-Ting Chen</title>
-  <meta name="description" content="Yan-Ting Chen — Economics, Data Science, AI">
+  <meta name="description" content="Yan-Ting Chen — Economics at National Taiwan University. Econometrics, machine learning, experimental design.">
+  <meta name="color-scheme" content="light dark">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <meta property="og:title" content="Yan-Ting Chen">
-  <meta property="og:description" content="Economics &amp; Data Science · NTU · Research, AI, FinTech">
+  <meta property="og:description" content="Economics · National Taiwan University · Econometrics, machine learning, experimental design">
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://ch3nyt.github.io">
   <meta property="og:image" content="https://ch3nyt.github.io/assets/profile.jpg">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Yan-Ting Chen">
-  <meta name="twitter:description" content="Economics &amp; Data Science · NTU · Research, AI, FinTech">
+  <meta name="twitter:description" content="Economics · National Taiwan University · Econometrics, machine learning, experimental design">
   <meta name="twitter:image" content="https://ch3nyt.github.io/assets/profile.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script>
     (function () {
-      var l = localStorage.getItem("lang") || "en";
+      var l = "en";
+      try { l = localStorage.getItem("lang") || "en"; } catch (e) {}
       document.documentElement.lang = l === "zh" ? "zh-TW" : "en";
     }());
   </script>
@@ -29,178 +31,206 @@
 <body>
   <a href="#about" class="skip-link" data-en="Skip to content" data-zh="跳至主要內容">Skip to content</a>
 
-  <header>
-    <nav>
-      <a href="#about" class="nav-name">Yan-Ting Chen</a>
-      <div class="nav-links">
-        <a href="#about"      data-en="About"      data-zh="關於">About</a>
+  <div class="page">
+
+    <!-- ── Sidebar ───────────────────────────────────────────────────────── -->
+    <aside class="sidebar">
+      <div class="identity">
+        <img class="portrait" src="assets/profile.jpg" alt="Portrait of Yan-Ting Chen" width="132" height="132">
+        <div class="identity-text">
+          <h1 class="name">Yan-Ting Chen</h1>
+          <p class="name-zh" lang="zh-TW">陳彥廷</p>
+          <p class="affiliation"
+             data-en="B.A. in Economics, National Taiwan University"
+             data-zh="國立臺灣大學經濟學系">B.A. in Economics, National Taiwan University</p>
+        </div>
+      </div>
+
+      <ul class="contact">
+        <li><span class="contact-label" data-en="Email" data-zh="信箱">Email</span><a href="mailto:Yan.YT.Chen@gmail.com">Yan.YT.Chen@gmail.com</a></li>
+        <li><span class="contact-label">GitHub</span><a href="https://github.com/ch3nyt" target="_blank" rel="noopener">ch3nyt</a></li>
+        <li><span class="contact-label">LinkedIn</span><a href="https://linkedin.com/in/ch3nyt" target="_blank" rel="noopener">ch3nyt</a></li>
+        <li><span class="contact-label">CV</span><a href="assets/resume.pdf" target="_blank" rel="noopener">PDF</a></li>
+      </ul>
+
+      <nav class="toc" aria-label="Sections">
+        <a href="#about"      data-en="About"      data-zh="簡介">About</a>
+        <a href="#education"  data-en="Education"  data-zh="學歷">Education</a>
         <a href="#research"   data-en="Research"   data-zh="研究">Research</a>
         <a href="#experience" data-en="Experience" data-zh="經歷">Experience</a>
         <a href="#projects"   data-en="Projects"   data-zh="專案">Projects</a>
-        <a href="#resume"     data-en="Resume"     data-zh="履歷">Resume</a>
-        <button class="lang-toggle" type="button">中文</button>
-      </div>
-    </nav>
-  </header>
+        <a href="#skills"     data-en="Skills"     data-zh="技能">Skills</a>
+      </nav>
 
-  <main>
+      <button class="lang-toggle" type="button" aria-label="Switch language">中文</button>
+    </aside>
 
-    <!-- ── About ─────────────────────────────────────────────────────────── -->
-    <section id="about">
-      <h2 data-en="About" data-zh="關於">About</h2>
+    <!-- ── Main ──────────────────────────────────────────────────────────── -->
+    <main>
 
-      <div class="about-hero">
-        <img class="about-photo" src="assets/profile.jpg" alt="Yan-Ting Chen">
-        <div class="about-intro">
-          <p class="about-name">Yan-Ting Chen &nbsp;·&nbsp; <span class="about-name-zh">陳彥廷</span></p>
-          <p class="about-affiliation">
-            <img class="org-icon" src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.ntu.edu.tw&size=32" alt="" aria-hidden="true">
-            <span data-en="B.A. in Economics · National Taiwan University · Expected Dec. 2026"
-                  data-zh="經濟系 B11 · 國立臺灣大學 · 預計 2026 年 12 月畢業">B.A. in Economics · National Taiwan University · Expected Dec. 2026</span>
-          </p>
-          <div class="contact-links">
-            <a href="mailto:Yan.YT.Chen@gmail.com">Yan.YT.Chen@gmail.com</a>
-            <a href="https://github.com/ch3nyt" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://linkedin.com/in/ch3nyt" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
-        </div>
-      </div>
+      <section id="about">
+        <h2 data-en="About" data-zh="簡介">About</h2>
+        <p class="lede"
+           data-en="How incentives and institutions shape behaviour, and how to measure it credibly with data: causal inference, experimental design, and machine learning for economic questions."
+           data-zh="誘因與制度如何影響人的行為，以及如何用資料可信地衡量它：因果推論、實驗設計，以及用於經濟問題的機器學習。">How incentives and institutions shape behaviour, and how to measure it credibly with data: causal inference, experimental design, and machine learning for economic questions.</p>
+        <p class="bio"
+           data-en="Yan-Ting Chen is a senior in Economics at National Taiwan University, graduating in December 2026. He is a Research Assistant in the TASSEL Lab under Prof. Joseph Tao-yi Wang, where he analyses a migrant–local sender–receiver game experiment on how language structure forms and is learned. Before that, he worked as a Digital Finance × AI Intern at Cathay United Bank, a Technology Consultant Intern at EY, and a Software Engineer Intern at Flexsoft."
+           data-zh="陳彥廷是國立臺灣大學經濟學系大四學生，預計於 2026 年 12 月畢業。目前在王道一教授的 TASSEL 實驗室擔任研究助理，分析一項移民與在地者之間的發送者—接收者賽局實驗，研究語言結構如何形成、如何被學會。此前曾任國泰世華銀行數位金融 × AI 實習生、安永（EY）科技顧問實習生，以及 Flexsoft 軟體工程師實習生。">Yan-Ting Chen is a senior in Economics at National Taiwan University, graduating in December 2026. He is a Research Assistant in the TASSEL Lab under Prof. Joseph Tao-yi Wang, where he analyses a migrant–local sender–receiver game experiment on how language structure forms and is learned. Before that, he worked as a Digital Finance × AI Intern at Cathay United Bank, a Technology Consultant Intern at EY, and a Software Engineer Intern at Flexsoft.</p>
+      </section>
 
-      <p class="about-bio"
-         data-en="Yan-Ting Chen is a senior undergraduate student in Economics at National Taiwan University, with an expected graduation in December 2026. He currently serves as a Research Assistant at the TASSEL Lab under Prof. Joseph Tao-Yi Wang, analyzing data with blend ML, LLM, and Econometrics approaches, developing computational methods to quantify linguistic structures in multi-agent experiments. Previously, he conducted undergraduate research at the iDSSP Lab on demographic fairness in recommendation systems, achieving 6–20× fairness improvements with less than 1% absolute accuracy trade-off. His industry experience includes a AI Research Internship at Cathay United Bank, a Technology Consulting Internship at Ernst &amp; Young, and a Software Engineering Internship at Flexsoft."
-         data-zh="陳彥廷是國立臺灣大學經濟學系大四學生，預計於 2026 年 12 月畢業。目前擔任 TASSEL 實驗室王道一教授的研究助理，協助以演算法、AI與計量經濟學方法進行實驗資料分析。在此之前他在電機系 iDSSP 實驗室擔任專題生，研究推薦系統的人口特徵公平性，在準確率損失不超過 1% 的情況下實現了 6–20 倍的公平性提升。其業界經驗涵蓋國泰世華銀行（AI 研究實習生）、安永聯合會計師事務所（科技顧問實習生），以及 Flexsoft（軟體工程師實習生）。"> Yan-Ting Chen is a senior undergraduate student in Economics at National Taiwan University, with an expected graduation in December 2026. He currently serves as a Research Assistant at the TASSEL Lab under Prof. Joseph Tao-Yi Wang, analyzing data with blend ML, LLM, and Econometrics approaches, developing computational methods to quantify linguistic structures in multi-agent experiments. Previously, he conducted undergraduate research at the iDSSP Lab on demographic fairness in recommendation systems, achieving 6–20× fairness improvements with less than 1% absolute accuracy trade-off. His industry experience includes a AI Research Internship at Cathay United Bank, a Technology Consulting Internship at Ernst &amp; Young, and a Software Engineering Internship at Flexsoft.</p>
-    </section>
-
-    <!-- ── Research Experience ───────────────────────────────────────────── -->
-    <section id="research">
-      <h2 data-en="Research Experience" data-zh="研究經歷">Research Experience</h2>
-
-      <div class="timeline">
-
-        <div class="timeline-entry">
-          <div class="entry-header">
-            <div class="entry-left">
-              <span class="entry-role" data-en="Research Assistant" data-zh="研究助理">Research Assistant</span>
-              <span class="entry-sep"> · </span>
-              <img class="org-icon" src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.ntu.edu.tw&size=32" alt="" aria-hidden="true">
-              <span class="entry-org" data-en="TASSEL Lab, Economics Dept., NTU" data-zh="TASSEL 實驗室，國立臺灣大學經濟學系">TASSEL Lab, Economics Dept., NTU</span>
+      <section id="education">
+        <h2 data-en="Education" data-zh="學歷">Education</h2>
+        <ol class="entries">
+          <li class="entry">
+            <p class="entry-date" data-en="Sep 2022 – Dec 2026 (expected)" data-zh="2022.09 – 2026.12（預計）">Sep 2022 – Dec 2026 (expected)</p>
+            <div class="entry-body">
+              <h3 class="entry-org"><span data-en="National Taiwan University" data-zh="國立臺灣大學">National Taiwan University</span><span class="entry-place" data-en="Taipei" data-zh="台北">Taipei</span></h3>
+              <p class="entry-role" data-en="B.A. in Economics · GPA 3.87 / 4.30" data-zh="經濟學學士 · GPA 3.87 / 4.30">B.A. in Economics · GPA 3.87 / 4.30</p>
+              <p class="entry-note"
+                 data-en="Relevant modules: Calculus I–IV; Linear Algebra; Statistics; Introductory Econometrics; Econometrics II; Machine Learning and Econometrics; Statistical Learning and Deep Learning; Operations Research; Text Mining."
+                 data-zh="相關課程：微積分 I–IV；線性代數；統計學；計量經濟學導論；計量經濟學二；機器學習與計量經濟學；統計學習與深度學習；作業研究；文字探勘。">Relevant modules: Calculus I–IV; Linear Algebra; Statistics; Introductory Econometrics; Econometrics II; Machine Learning and Econometrics; Statistical Learning and Deep Learning; Operations Research; Text Mining.</p>
             </div>
-            <span class="entry-date">Jan. 2026 – Present</span>
-          </div>
-          <ul class="entry-bullets">
-            <li data-en="Develop Python algorithms to quantify linguistic structure emergence (e.g., compositional vs. irregular patterns) in multi-agent human experiments."
-                data-zh="開發 Python 演算法，量化多人實驗中的語言結構湧現現象（如組合式模式與不規則模式）。">Develop Python algorithms to quantify linguistic structure emergence (e.g., compositional vs. irregular patterns) in multi-agent human experiments.</li>
-            <li data-en="Conduct EDA and apply econometric modeling (Stata/Python) to analyze subjects' strategic adaptation, running Logit/Probit regressions with dummy interactions, and validating model robustness via Hausman tests and VIF diagnostics."
-                data-zh="進行探索性資料分析，並應用計量經濟學模型（Stata/Python）分析受試者策略適應行為，執行含虛擬變數交互項的 Logit/Probit 迴歸，並透過 Hausman 檢定與 VIF 診斷驗證模型穩健性。">Conduct EDA and apply econometric modeling (Stata/Python) to analyze subjects' strategic adaptation, running Logit/Probit regressions with dummy interactions, and validating model robustness via Hausman tests and VIF diagnostics.</li>
-          </ul>
-        </div>
+          </li>
+        </ol>
+      </section>
 
-        <div class="timeline-entry">
-          <div class="entry-header">
-            <div class="entry-left">
-              <span class="entry-role" data-en="Undergraduate Researcher" data-zh="大學部研究員">Undergraduate Researcher</span>
-              <span class="entry-sep"> · </span>
-              <img class="org-icon" src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.ntu.edu.tw&size=32" alt="" aria-hidden="true">
-              <span class="entry-org" data-en="iDSSP Lab, Electrical Engineering Dept., NTU" data-zh="iDSSP 實驗室，國立臺灣大學電機系">iDSSP Lab, Electrical Engineering Dept., NTU</span>
+      <section id="research">
+        <h2 data-en="Research" data-zh="研究">Research</h2>
+        <ol class="entries">
+
+          <li class="entry">
+            <p class="entry-date" data-en="Jan 2026 – Present" data-zh="2026.01 – 至今">Jan 2026 – Present</p>
+            <div class="entry-body">
+              <h3 class="entry-org"><span data-en="TASSEL Lab, Department of Economics, NTU" data-zh="TASSEL 實驗室，臺大經濟學系">TASSEL Lab, Department of Economics, NTU</span></h3>
+              <p class="entry-role" data-en="Research Assistant (PI: Joseph Tao-yi Wang)" data-zh="研究助理（指導教授：王道一）">Research Assistant (PI: Joseph Tao-yi Wang)</p>
+              <ul class="entry-points">
+                <li data-en="Re-implemented and debugged the algorithm that infers each subject's language structure in a migrant–local sender–receiver game experiment; helped decide how distances between messages are computed."
+                    data-zh="在一項移民—在地者的發送者—接收者賽局實驗中，重新實作並除錯推論每位受試者語言結構的演算法；參與決定訊息之間距離的計算方式。">Re-implemented and debugged the algorithm that infers each subject's language structure in a migrant–local sender–receiver game experiment; helped decide how distances between messages are computed.</li>
+                <li data-en="Analysed what drives active language learning among 18 subjects with Firth's logit and random effects (CR3 SEs by subject); scored each round's guessing difficulty with Bayesian methods and an LLM API."
+                    data-zh="以 Firth's logit 與隨機效果模型（依受試者分群的 CR3 標準誤）分析 18 位受試者主動學習語言的驅動因素；以貝氏方法與 LLM API 為每回合的猜測難度評分。">Analysed what drives active language learning among 18 subjects with Firth's logit and random effects (CR3 SEs by subject); scored each round's guessing difficulty with Bayesian methods and an LLM API.</li>
+              </ul>
             </div>
-            <span class="entry-date">Jan. 2025 – Dec. 2025</span>
-          </div>
-          <ul class="entry-bullets">
-            <li data-en="Architected a fairness-aware framework by implementing an Adversarial Debiasing network with a double-layer architecture."
-                data-zh="架構公平性感知框架，實作採用雙層架構的對抗去偏差網路。">Architected a fairness-aware framework by implementing an Adversarial Debiasing network with a double-layer architecture.</li>
-            <li data-en="Designed custom loss functions, transitioning from BCE to Quantile Loss to optimize tail performance and balance the fairness-accuracy trade-off."
-                data-zh="設計客製化損失函數，從 BCE 轉換至 Quantile Loss，以優化尾端效能並平衡公平性與準確率之間的取捨。">Designed custom loss functions, transitioning from BCE to Quantile Loss to optimize tail performance and balance the fairness-accuracy trade-off.</li>
-            <li data-en="Led research direction and authored technical report, achieving significant fairness improvements (6–20×) with minimal accuracy loss (&lt;1%)."
-                data-zh="主導研究方向並撰寫技術報告，在準確率損失不超過 1% 的情況下，實現顯著的公平性提升（6–20 倍）。">Led research direction and authored technical report, achieving significant fairness improvements (6–20×) with minimal accuracy loss (&lt;1%).</li>
-          </ul>
-        </div>
+          </li>
 
-      </div>
-    </section>
-
-    <!-- ── Professional Experience ───────────────────────────────────────── -->
-    <section id="experience">
-      <h2 data-en="Experience" data-zh="工作經歷">Experience</h2>
-
-      <div class="timeline">
-
-        <div class="timeline-entry">
-          <div class="entry-header">
-            <div class="entry-left">
-              <span class="entry-role" data-en="Fintech × Gen. AI Research Intern" data-zh="金融科技 × 生成式 AI 研究實習生">Fintech × Gen. AI Research Intern</span>
-              <span class="entry-sep"> · </span>
-              <img class="org-icon" src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.cathaybk.com.tw&size=32" alt="" aria-hidden="true">
-              <span class="entry-org" data-en="Cathay United Bank, Taipei" data-zh="國泰世華銀行，台北">Cathay United Bank, Taipei</span>
+          <li class="entry">
+            <p class="entry-date" data-en="Feb 2026 – Jun 2026" data-zh="2026.02 – 2026.06">Feb 2026 – Jun 2026</p>
+            <div class="entry-body">
+              <h3 class="entry-org"><span data-en="Did ChatGPT Change How Journalists Write?" data-zh="ChatGPT 改變了記者的寫作方式嗎？">Did ChatGPT Change How Journalists Write?</span></h3>
+              <p class="entry-role" data-en="Final project (sole author), Machine Learning and Econometrics, NTU" data-zh="期末專案（獨立完成），臺大「機器學習與計量經濟學」">Final project (sole author), Machine Learning and Econometrics, NTU</p>
+              <ul class="entry-points">
+                <li data-en="Scraped 6,293 articles by 42 Taiwanese reporters; measured topics and wording with LDA and word frequencies."
+                    data-zh="爬取 42 位台灣記者共 6,293 篇文章；以 LDA 與詞頻衡量主題與用字。">Scraped 6,293 articles by 42 Taiwanese reporters; measured topics and wording with LDA and word frequencies.</li>
+                <li data-en="Estimated ChatGPT's effect with a TWFE DiD (wild cluster bootstrap), event study, double ML and causal forests; male reporters' wording became more regular, but the gender gap was not statistically significant."
+                    data-zh="以 TWFE 雙重差分（wild cluster bootstrap）、事件研究、double ML 與因果森林估計 ChatGPT 的影響；男性記者的用字變得更規律，但性別差距不具統計顯著性。">Estimated ChatGPT's effect with a TWFE DiD (wild cluster bootstrap), event study, double ML and causal forests; male reporters' wording became more regular, but the gender gap was not statistically significant.</li>
+              </ul>
             </div>
-            <span class="entry-date">Jan. 2026 – Apr. 2026</span>
-          </div>
-          <ul class="entry-bullets">
-            <li data-en="Architected a hybrid RAG evaluation pipeline (BM25 + embeddings) to benchmark local LLMs (e.g., Qwen) via Ragas, delivering feasibility reports to drive secure AI strategy."
-                data-zh="架構混合式 RAG 評估流程（BM25 + 嵌入向量），透過 Ragas 對本地 LLM（如 Qwen）進行基準測試，並提交可行性報告以推動安全 AI 策略。">Architected a hybrid RAG evaluation pipeline (BM25 + embeddings) to benchmark local LLMs (e.g., Qwen) via Ragas, delivering feasibility reports to drive secure AI strategy.</li>
-            <li data-en="Prototyped a VLM-powered Mobile Agent PoC (Maestro, ADB, Ollama) for autonomous GUI exploration, validating zero-data-leakage automated workflows for financial applications."
-                data-zh="開發以 VLM 驅動的行動端智能代理概念驗證（Maestro、ADB、Ollama），用於自主 GUI 探索，驗證金融應用中零資料洩漏的自動化工作流程。">Prototyped a VLM-powered Mobile Agent PoC (Maestro, ADB, Ollama) for autonomous GUI exploration, validating zero-data-leakage automated workflows for financial applications.</li>
-          </ul>
-        </div>
+          </li>
 
-        <div class="timeline-entry">
-          <div class="entry-header">
-            <div class="entry-left">
-              <span class="entry-role" data-en="Technology Consultant Intern" data-zh="科技顧問實習生">Technology Consultant Intern</span>
-              <span class="entry-sep"> · </span>
-              <img class="org-icon" src="https://www.google.com/s2/favicons?domain=ey.com&sz=32" alt="" aria-hidden="true">
-              <span class="entry-org" data-en="Ernst &amp; Young (EY), Taipei" data-zh="安永聯合會計師事務所（EY），台北">Ernst &amp; Young (EY), Taipei</span>
+          <li class="entry">
+            <p class="entry-date" data-en="May 2026" data-zh="2026.05">May 2026</p>
+            <div class="entry-body">
+              <h3 class="entry-org"><span data-en="Institute for Replication (I4R), AI Replication Games" data-zh="Institute for Replication（I4R），AI Replication Games">Institute for Replication (I4R), AI Replication Games</span><span class="entry-place" data-en="Remote" data-zh="遠距">Remote</span></h3>
+              <p class="entry-role" data-en="Replicator; co-author of the resulting meta-paper (in preparation)" data-zh="複製研究者；後續 meta-paper 共同作者（撰寫中）">Replicator; co-author of the resulting meta-paper (in preparation)</p>
+              <ul class="entry-points">
+                <li data-en="Reproduced an AEJ: Applied paper on heat and baseball attendance in the human-only (no-AI) arm and wrote a referee report; afterwards completed two robustness checks independently with AI assistance."
+                    data-zh="在純人工（不使用 AI）組重現一篇 AEJ: Applied 關於高溫與棒球觀眾人數的論文，並撰寫 referee report；之後自行以 AI 輔助完成兩項穩健性檢定。">Reproduced an AEJ: Applied paper on heat and baseball attendance in the human-only (no-AI) arm and wrote a referee report; afterwards completed two robustness checks independently with AI assistance.</li>
+              </ul>
             </div>
-            <span class="entry-date">Jun. 2025 – Jul. 2025</span>
-          </div>
-          <ul class="entry-bullets">
-            <li data-en="Engineered SQL/Python data pipelines and synthesized AI market research to drive FinTech strategies."
-                data-zh="建構 SQL/Python 資料管線，並整合 AI 市場研究報告以推動金融科技策略。">Engineered SQL/Python data pipelines and synthesized AI market research to drive FinTech strategies.</li>
-          </ul>
-        </div>
+          </li>
 
-        <div class="timeline-entry">
-          <div class="entry-header">
-            <div class="entry-left">
-              <span class="entry-role" data-en="Software Engineer Intern" data-zh="軟體工程師實習生">Software Engineer Intern</span>
-              <span class="entry-sep"> · </span>
-              <img class="org-icon" src="https://www.google.com/s2/favicons?domain=flexsoftware.com.my&sz=32" alt="" aria-hidden="true">
-              <span class="entry-org" data-en="Flexsoft, Kuala Lumpur" data-zh="Flexsoft，吉隆坡">Flexsoft, Kuala Lumpur</span>
+          <li class="entry">
+            <p class="entry-date" data-en="Jan 2025 – Dec 2025" data-zh="2025.01 – 2025.12">Jan 2025 – Dec 2025</p>
+            <div class="entry-body">
+              <h3 class="entry-org"><span data-en="iDSSP Lab, Department of Electrical Engineering, NTU" data-zh="iDSSP 實驗室，臺大電機工程學系">iDSSP Lab, Department of Electrical Engineering, NTU</span></h3>
+              <p class="entry-role" data-en="Undergraduate Researcher" data-zh="大學部專題生">Undergraduate Researcher</p>
+              <ul class="entry-points">
+                <li data-en="Team project: applied adversarial debiasing to a MovieLens 1M recommender, cutting NDCG-weighted top-k recommendation gaps between users who differ only in gender, age or occupation 6–20× at under 1 pp accuracy cost."
+                    data-zh="團隊專案：將對抗式去偏差應用於 MovieLens 1M 推薦系統，對僅在性別、年齡或職業上不同的使用者，將 NDCG 加權的 top-k 推薦差距縮小 6–20 倍，準確率損失低於 1 個百分點。">Team project: applied adversarial debiasing to a MovieLens 1M recommender, cutting NDCG-weighted top-k recommendation gaps between users who differ only in gender, age or occupation 6–20× at under 1 pp accuracy cost.</li>
+              </ul>
             </div>
-            <span class="entry-date">Jul. 2023 – Aug. 2023</span>
+          </li>
+
+        </ol>
+      </section>
+
+      <section id="experience">
+        <h2 data-en="Experience" data-zh="工作經歷">Experience</h2>
+        <ol class="entries">
+
+          <li class="entry">
+            <p class="entry-date" data-en="Jan 2026 – Apr 2026" data-zh="2026.01 – 2026.04">Jan 2026 – Apr 2026</p>
+            <div class="entry-body">
+              <h3 class="entry-org"><span data-en="Cathay United Bank" data-zh="國泰世華銀行">Cathay United Bank</span><span class="entry-place" data-en="Taipei" data-zh="台北">Taipei</span></h3>
+              <p class="entry-role" data-en="Digital Finance × AI Intern" data-zh="數位金融 × AI 實習生">Digital Finance × AI Intern</p>
+              <ul class="entry-points">
+                <li data-en="Benchmarked 8+ LLMs (locally run open-weight models and commercial APIs) with Ragas on a 672-question banking QA set, to test whether a planned app-review auto-reply could stay in-house for privacy and cost."
+                    data-zh="以 Ragas 在 672 題銀行問答集上評測 8 個以上 LLM（本地執行的開源權重模型與商用 API），檢驗規劃中的 App 評論自動回覆能否基於隱私與成本考量留在行內。">Benchmarked 8+ LLMs (locally run open-weight models and commercial APIs) with Ragas on a 672-question banking QA set, to test whether a planned app-review auto-reply could stay in-house for privacy and cost.</li>
+                <li data-en="Traced weak answers to the RAG pipeline's short, non-overlapping chunks; rewrote chunking at paragraph boundaries and added BM25 + dense retrieval, raising Ragas answer correctness by about 20% (relative)."
+                    data-zh="追查出回答品質不佳源於 RAG 流程的切塊過短且彼此不重疊；改以段落為界重新切塊，並加入 BM25 + 稠密檢索，使 Ragas answer correctness 相對提升約 20%。">Traced weak answers to the RAG pipeline's short, non-overlapping chunks; rewrote chunking at paragraph boundaries and added BM25 + dense retrieval, raising Ragas answer correctness by about 20% (relative).</li>
+                <li data-en="Built the agentic workflow for a VLM-driven mobile agent (Maestro, ADB, Ollama); running on fully local inference, the agent completed a 10-step transfer end to end in the real CUBE App on a company test device."
+                    data-zh="為 VLM 驅動的行動端代理（Maestro、ADB、Ollama）建立 agentic 工作流程；在完全本地推論下，代理於公司測試機上的真實 CUBE App 中端到端完成 10 步驟轉帳。">Built the agentic workflow for a VLM-driven mobile agent (Maestro, ADB, Ollama); running on fully local inference, the agent completed a 10-step transfer end to end in the real CUBE App on a company test device.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="entry">
+            <p class="entry-date" data-en="Jun 2025 – Jul 2025" data-zh="2025.06 – 2025.07">Jun 2025 – Jul 2025</p>
+            <div class="entry-body">
+              <h3 class="entry-org"><span data-en="Ernst &amp; Young (EY)" data-zh="安永聯合會計師事務所（EY）">Ernst &amp; Young (EY)</span><span class="entry-place" data-en="Taipei" data-zh="台北">Taipei</span></h3>
+              <p class="entry-role" data-en="Technology Consultant Intern, Data Analytics &amp; Digital Emerging Technology Team" data-zh="科技顧問實習生，數據分析與數位新興科技團隊">Technology Consultant Intern, Data Analytics &amp; Digital Emerging Technology Team</p>
+              <ul class="entry-points">
+                <li data-en="Added privacy-audit logging (Bash, SQL) to an EY SaaS product to meet client needs, recording which system nodes each employee accessed and which personal-data files those nodes touched."
+                    data-zh="為 EY 的 SaaS 產品加入隱私稽核日誌（Bash、SQL）以符合客戶需求，記錄每位員工存取了哪些系統節點，以及這些節點觸及哪些個資檔案。">Added privacy-audit logging (Bash, SQL) to an EY SaaS product to meet client needs, recording which system nodes each employee accessed and which personal-data files those nodes touched.</li>
+                <li data-en="Built a reusable master pitch deck for banking clients and Power BI dashboards on carbon emissions."
+                    data-zh="為銀行客戶製作可重複使用的主提案簡報，並以 Power BI 建置碳排放儀表板。">Built a reusable master pitch deck for banking clients and Power BI dashboards on carbon emissions.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="entry">
+            <p class="entry-date" data-en="Jul 2023 – Aug 2023" data-zh="2023.07 – 2023.08">Jul 2023 – Aug 2023</p>
+            <div class="entry-body">
+              <h3 class="entry-org"><span>Flexsoft</span><span class="entry-place" data-en="Kuala Lumpur" data-zh="吉隆坡">Kuala Lumpur</span></h3>
+              <p class="entry-role" data-en="Software Engineer Intern" data-zh="軟體工程師實習生">Software Engineer Intern</p>
+              <ul class="entry-points">
+                <li data-en="Fixed errors in client-specific accounting reports by rewriting the underlying SQL queries."
+                    data-zh="改寫底層 SQL 查詢，修正客戶專屬會計報表中的錯誤。">Fixed errors in client-specific accounting reports by rewriting the underlying SQL queries.</li>
+              </ul>
+            </div>
+          </li>
+
+        </ol>
+      </section>
+
+      <section id="projects">
+        <h2 data-en="Projects" data-zh="專案">Projects</h2>
+        <p class="section-note"
+           data-en="Public repositories on GitHub, most recently updated first."
+           data-zh="GitHub 上的公開專案，依最近更新排序。">Public repositories on GitHub, most recently updated first.</p>
+        <ul id="projects-list" class="projects"></ul>
+      </section>
+
+      <section id="skills">
+        <h2 data-en="Skills" data-zh="技能">Skills</h2>
+        <dl class="skills">
+          <div>
+            <dt data-en="Technical" data-zh="技術">Technical</dt>
+            <dd>Python (pandas, scikit-learn, PyTorch), R, SQL, Stata; Ragas, Ollama, Maestro, ADB; GCP, Power BI, Git, LaTeX</dd>
           </div>
-          <ul class="entry-bullets">
-            <li data-en="Optimized SQL queries for accounting reporting, significantly improving generation speed and accuracy."
-                data-zh="優化會計報表的 SQL 查詢，顯著提升報表生成速度與準確性。">Optimized SQL queries for accounting reporting, significantly improving generation speed and accuracy.</li>
-          </ul>
-        </div>
+          <div>
+            <dt data-en="Languages" data-zh="語言">Languages</dt>
+            <dd data-en="English (IELTS 8.0, TOEIC 975), Mandarin (native), Taiwanese (native), Spanish (basic)"
+                data-zh="英文（IELTS 8.0、TOEIC 975）、華語（母語）、台語（母語）、西班牙文（基礎）">English (IELTS 8.0, TOEIC 975), Mandarin (native), Taiwanese (native), Spanish (basic)</dd>
+          </div>
+        </dl>
+      </section>
 
-      </div>
-    </section>
+      <footer>
+        <p data-en="© 2026 Yan-Ting Chen" data-zh="© 2026 陳彥廷">© 2026 Yan-Ting Chen</p>
+      </footer>
 
-    <!-- ── Projects ──────────────────────────────────────────────────────── -->
-    <section id="projects">
-      <h2 data-en="Projects" data-zh="專案">Projects</h2>
-      <div id="projects-grid" class="projects-grid"></div>
-    </section>
-
-    <!-- ── Resume ────────────────────────────────────────────────────────── -->
-    <section id="resume">
-      <h2 data-en="Resume" data-zh="履歷">Resume</h2>
-      <div class="resume-actions">
-        <a href="assets/resume.pdf" download class="btn-download"
-           data-en="Download Resume" data-zh="下載履歷">Download Resume</a>
-      </div>
-      <object class="resume-embed" data="assets/resume.pdf" type="application/pdf">
-        <p data-en="PDF preview is not supported in this browser. Please use the download link above."
-           data-zh="此瀏覽器不支援 PDF 預覽，請使用上方下載連結。">PDF preview is not supported in this browser. Please use the download link above.</p>
-      </object>
-    </section>
-
-  </main>
-
-  <footer>
-    <p data-en="© 2026 Yan-Ting Chen" data-zh="© 2026 陳彥廷">© 2026 Yan-Ting Chen</p>
-  </footer>
+    </main>
+  </div>
 
   <script src="lang.js"></script>
   <script src="projects.js"></script>

@@ -1,120 +1,102 @@
 (function () {
   "use strict";
 
-  var CACHE_KEY = "gh_repos_ch3nyt";
-  var API_URL = "https://api.github.com/users/ch3nyt/repos?type=public&per_page=100&sort=updated";
+  var CACHE_KEY = "gh_repos_ch3nyt_v2";
+  var API_URL = "https://api.github.com/users/ch3nyt/repos?type=owner&per_page=100&sort=pushed";
+  var EXCLUDE = ["ch3nyt.github.io"];
 
-  function getCurrentLang() {
-    return localStorage.getItem("lang") || "en";
+  function lang() {
+    return typeof window.getLang === "function" ? window.getLang() : "en";
   }
 
-  function renderCards(repos) {
-    var grid = document.getElementById("projects-grid");
-    if (!grid) return;
+  function statusLine(list, en, zh) {
+    var li = document.createElement("li");
+    li.className = "projects-status";
+    li.setAttribute("data-en", en);
+    li.setAttribute("data-zh", zh);
+    li.textContent = lang() === "zh" ? zh : en;
+    list.innerHTML = "";
+    list.appendChild(li);
+  }
 
-    if (!repos || repos.length === 0) {
-      renderFallback(grid);
+  function render(repos) {
+    var list = document.getElementById("projects-list");
+    if (!list) return;
+
+    var shown = (repos || []).filter(function (r) {
+      return !r.fork && r.description && EXCLUDE.indexOf(r.name) === -1;
+    });
+
+    if (shown.length === 0) {
+      statusLine(list,
+        "Projects could not be loaded. See github.com/ch3nyt.",
+        "無法載入專案，請直接前往 github.com/ch3nyt。");
       return;
     }
 
-    var lang = getCurrentLang();
     var fragment = document.createDocumentFragment();
 
-    repos.forEach(function (repo) {
-      var card = document.createElement("article");
-      card.className = "project-card";
+    shown.forEach(function (repo) {
+      var item = document.createElement("li");
+      item.className = "project";
 
-      // Title link
-      var titleLink = document.createElement("a");
-      titleLink.href = repo.html_url;
-      titleLink.target = "_blank";
-      titleLink.rel = "noopener";
-      titleLink.textContent = repo.name.replace(/-/g, "\u2011");
-      titleLink.className = "project-name";
-      card.appendChild(titleLink);
+      var name = document.createElement("a");
+      name.className = "project-name";
+      name.href = repo.html_url;
+      name.target = "_blank";
+      name.rel = "noopener";
+      name.textContent = repo.name;
+      item.appendChild(name);
 
-      // Description
-      if (repo.description) {
-        var desc = document.createElement("p");
-        desc.className = "project-desc";
-        desc.textContent = repo.description;
-        card.appendChild(desc);
-      }
+      var meta = document.createElement("span");
+      meta.className = "project-meta";
+      var year = (repo.pushed_at || "").slice(0, 4);
+      meta.textContent = [repo.language, year].filter(Boolean).join(" · ");
+      item.appendChild(meta);
 
-      // Footer with GitHub link
-      var footer = document.createElement("div");
-      footer.className = "project-footer";
-      var ghLink = document.createElement("a");
-      ghLink.href = repo.html_url;
-      ghLink.target = "_blank";
-      ghLink.rel = "noopener";
-      ghLink.className = "project-footer-link";
-      ghLink.setAttribute("data-en", "View on GitHub \u2192");
-      ghLink.setAttribute("data-zh", "\u5728 GitHub \u67e5\u770b \u2192");
-      ghLink.textContent = lang === "zh" ? "\u5728 GitHub \u67e5\u770b \u2192" : "View on GitHub \u2192";
-      footer.appendChild(ghLink);
-      card.appendChild(footer);
+      var desc = document.createElement("p");
+      desc.className = "project-desc";
+      desc.textContent = repo.description;
+      item.appendChild(desc);
 
-      fragment.appendChild(card);
+      fragment.appendChild(item);
     });
 
-    grid.innerHTML = "";
-    grid.appendChild(fragment);
-    if (typeof window.applyLang === "function") {
-      window.applyLang(getCurrentLang());
-    }
+    list.innerHTML = "";
+    list.appendChild(fragment);
   }
 
-  function renderFallback(grid) {
-    var lang = getCurrentLang();
-    var p = document.createElement("p");
-    p.className = "projects-fallback";
-    p.setAttribute("data-en", "GitHub projects could not be loaded. Please visit github.com/ch3nyt directly.");
-    p.setAttribute("data-zh", "\u7121\u6cd5\u8f09\u5165 GitHub \u5c08\u6848\uff0c\u8acb\u76f4\u63a5\u9020\u8a2a github.com/ch3nyt\u3002");
-    p.textContent = lang === "zh"
-      ? "\u7121\u6cd5\u8f09\u5165 GitHub \u5c08\u6848\uff0c\u8acb\u76f4\u63a5\u9020\u8a2a github.com/ch3nyt\u3002"
-      : "GitHub projects could not be loaded. Please visit github.com/ch3nyt directly.";
-    grid.innerHTML = "";
-    grid.appendChild(p);
-  }
+  function load() {
+    var list = document.getElementById("projects-list");
+    if (!list) return;
 
-  function fetchRepos() {
-    var grid = document.getElementById("projects-grid");
-    if (!grid) return;
-
-    var cached = sessionStorage.getItem(CACHE_KEY);
-    if (cached) {
-      try {
-        renderCards(JSON.parse(cached));
+    try {
+      var cached = sessionStorage.getItem(CACHE_KEY);
+      if (cached) {
+        render(JSON.parse(cached));
         return;
-      } catch (e) {
-        sessionStorage.removeItem(CACHE_KEY);
       }
-    }
+    } catch (e) {}
 
-    var lang = getCurrentLang();
-    grid.innerHTML = "<p class=\"projects-loading\">" +
-      (lang === "zh" ? "\u8f09\u5165\u5c08\u6848\u4e2d\u2026" : "Loading projects\u2026") + "</p>";
+    statusLine(list, "Loading projects…", "載入專案中…");
 
     fetch(API_URL)
       .then(function (res) {
-        if (!res.ok) throw new Error("API error " + res.status);
+        if (!res.ok) throw new Error("GitHub API " + res.status);
         return res.json();
       })
       .then(function (data) {
-        var original = data.filter(function (r) { return !r.fork; });
-        original.sort(function (a, b) { return b.stargazers_count - a.stargazers_count; });
-        sessionStorage.setItem(CACHE_KEY, JSON.stringify(original));
-        renderCards(original);
+        try { sessionStorage.setItem(CACHE_KEY, JSON.stringify(data)); } catch (e) {}
+        render(data);
       })
       .catch(function () {
-        renderFallback(grid);
+        render([]);
       });
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", fetchRepos);
+    document.addEventListener("DOMContentLoaded", load);
   } else {
-    fetchRepos();
+    load();
   }
 }());
